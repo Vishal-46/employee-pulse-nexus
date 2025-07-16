@@ -1,11 +1,19 @@
-
 import { useState, useEffect } from "react";
 import { Plus, Trash2, Send, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Employee } from "@/lib/supabase";
+
+interface Employee {
+  id?: string;
+  name: string;
+  email: string;
+  emp_num: string;
+  phone_no: string;
+  created_at?: string;
+  updated_at?: string;
+}
 
 interface EmployeeFormProps {
   onAddEmployee: (employee: Omit<Employee, 'id'>) => void;

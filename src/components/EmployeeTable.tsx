@@ -1,9 +1,17 @@
-
 import { useState } from "react";
 import { Users, Search, ChevronUp, ChevronDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Employee } from "@/lib/supabase";
+
+interface Employee {
+  id?: string;
+  name: string;
+  email: string;
+  emp_num: string;
+  phone_no: string;
+  created_at?: string;
+  updated_at?: string;
+}
 
 interface EmployeeTableProps {
   employees: Employee[];

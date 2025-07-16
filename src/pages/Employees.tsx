@@ -3,7 +3,18 @@ import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import EmployeeForm from "@/components/EmployeeForm";
 import EmployeeTable from "@/components/EmployeeTable";
-import { Employee, supabase } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
+
+// Updated Employee interface to match the database schema
+interface Employee {
+  id?: string;
+  name: string;
+  email: string;
+  emp_num: string;
+  phone_no: string;
+  created_at?: string;
+  updated_at?: string;
+}
 
 const Employees = () => {
   const [employees, setEmployees] = useState<Employee[]>([]);
